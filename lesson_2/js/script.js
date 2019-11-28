@@ -29,7 +29,8 @@
 // если а и b отрицательные, вывести их произведение;
 // если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
 
-let a = 2, b = 3;
+let a = 2,
+    b = 3;
 console.log(a >= 0 && b >= 0 ? a - b : (a < 0 && b < 0 ? a * b : a + b));
 
 // *Решил чуть поменять условие и сделать вариант с функцией.
@@ -41,66 +42,81 @@ function signCheck(a, b) {
 // Задание 4.
 // Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
 
-function rangeBetween(start, end) {
-    let arr = [];
-    let range = (end - start) + 1;
-    for (let index = 0; index < range; index++) {
-        arr.push(start++)
-    }
-    return arr
+// function rangeBetween(start, end) {
+//     let arr = [];
+//     let range = (end - start) + 1;
+//     for (let index = 0; index < range; index++) {
+//         arr.push(start++)
+//     }
+//     return arr
+// }
+
+let num = +prompt('a =');
+switch (num) {
+    case 0:
+    console.log(num++);
+    case 1:
+    console.log(num++);
+    case 2:
+    console.log(num++);
+    case 3:
+    console.log(num++);
+    case 4:
+    console.log(num++);
+    case 5:
+    console.log(num++);
+    default:
+    break;
 }
 
-let a2 = 10;
-switch (a2) {
-    case 0:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 1:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 2:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 3:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 4:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 5:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 6:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 7:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 8:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 9:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 10:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 11:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 12:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 13:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 14:
-        console.log(rangeBetween(a2, 15))
-        break;
-    case 15:
-        console.log(rangeBetween(a2, 15))
-        break;
-}
+// Совсем я неправильно сделал)
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 1:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 2:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 3:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 4:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 5:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 6:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 7:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 8:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 9:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 10:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 11:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 12:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 13:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 14:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
+    // case 15:
+    //     console.log(rangeBetween(a2, 15))
+    //     break;
 
 // Задание 5.
 // Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. 
@@ -120,6 +136,10 @@ function mult(a, b) {
 
 function div(a, b) {
     return a / b;
+    // if (b = 0) {
+    // return alert("Введите число неравное 0")
+    // } else {
+    // }
 }
 
 // Задание 6.
@@ -173,10 +193,15 @@ console.log(null < 0); // false
 // Подходит только если pow - целое число.
 function power(val, pow) {
     if (pow == 0) {
-      return 1;
-   } else if (pow >= 1) {
-       return val*power(val, pow-1);
-   } else if (pow <= -1) {
-    return 1 / (val*power(val, -pow-1));
-} 
+        return 1;
+    } else if (pow >= 1) {
+        return val * power(val, pow - 1);
+    } else if (pow <= -1) {
+        return 1 / (val * power(val, -pow - 1));
+    }
 }
+
+// краткое решение без отрицательных степеней:
+// function power(val, pow) {
+//     return !power ? 1 : val * power(val, pow - 1);
+// }
