@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="round (0)">Камень</button>
+    <button onclick="round (1)">Ножницы</button>
+    <button onclick="round (2)">Бумага</button>
+
+    <script>
+        function round (user) {
+            let comp = getPC ()
+            //console.log ('Пользователь выбрал ' + user)
+            if ((user === 0 && comp === 1) || (user === 1 && comp === 2) || (user === 2 && comp === 0)) {
+                console.log ('Пользователь победил! ' + translate (user) + '; ' + translate (comp))
+            } else if (comp === user) {
+                console.log ('Ничья')
+            } else {
+                console.log ('Пользователь проиграл! ' + translate (user) + '; ' + translate (comp))
+            }
+        }
+
+        function getPC () {
+            return Math.floor (Math.random () * 3) // [0 - 2]
+        }
+
+        function translate (ch) {
+            return ch === 0 ? 'Камень' : (ch === 1 ? 'Ножницы' : 'Бумага')
+        }
+    </script>
+</body>
+</html>
